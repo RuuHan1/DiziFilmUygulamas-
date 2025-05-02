@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Movie>  
+
+<h1>Movie List</h1>
+
+<ul>
+@foreach (var movie in Model)
+{
+    <li>
+        <a href="@Url.Action("Details", "Home", new { id = movie.Id })">@movie.Title</a> 
+        - @movie.ReleaseDate.ToShortDateString()  <!-- Filmin adı ve çıkış tarihi -->
+    </li>
+}
+</ul>

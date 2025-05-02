@@ -1,0 +1,26 @@
+﻿@model Movie  
+<!-- Film modelini alıyoruz -->
+
+<h2>@Model.Title</h2>  <!-- Filmin başlığını gösteriyoruz -->
+<p>Release Date: @Model.ReleaseDate.ToShortDateString()</p>  <!-- Filmin çıkış tarihini gösteriyoruz -->
+
+<h3>Ratings</h3>  <!-- Puanları gösteriyoruz -->
+@foreach (var rating in Model.Ratings)
+{
+    <div>
+        <p>Rating: @rating.Score/10</p>  <!-- Puanı gösteriyoruz -->
+        <p>Comment: @rating.Comment</p>  <!-- Yorumları gösteriyoruz -->
+    </div>
+}
+
+<form method="post" asp-action="Rate" asp-route-id="@Model.Id">
+    <label for="score">Score (1-10):</label>
+    <input type="number" id="score" name="Score" min="1" max="10" required />
+    
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="Comment"></textarea>
+
+    <button type="submit">Submit Rating</button>
+</form>
+
+

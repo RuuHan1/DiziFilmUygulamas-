@@ -1,9 +1,9 @@
 using System.Diagnostics;
-using DiziFilmUygulaması.Models;
+using DiziFilmUygulamas.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace DiziFilmUygulaması.Controllers
+namespace DiziFilmUygulamas.Controllers
 {
     public class HomeController : Controller
     {

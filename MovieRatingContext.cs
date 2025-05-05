@@ -1,8 +1,8 @@
-﻿using DiziFilmUygulaması.Models;
+﻿using DiziFilmUygulamas.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace DiziFilmUygulaması
+namespace DiziFilmUygulamas
 {
     public class MovieRatingContext : DbContext
     {

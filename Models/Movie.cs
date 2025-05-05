@@ -1,12 +1,26 @@
-﻿namespace DiziFilmUygulaması.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace DiziFilmUygulamas.Models
 {
     public class Movie
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Title { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
-        public string ImageUrl { get; set; }
-        public List<Rating> Ratings { get; set; } // Filmle ilişkili puanlamalar
+        public string Description { get; set; }
+        public string Type { get; set; }
+        public float AvgRate { get; set; }
+
+        // your Java field is "private List<RateEntity> rate;"
+        // so we match it as a collection of Rate objects:
+        [JsonPropertyName("rate")]
+        public List<Rating> Ratings { get; set; }
+
+        // for the image blob:
+        public byte[] Image { get; set; }
     }
 }

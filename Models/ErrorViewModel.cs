@@ -1,4 +1,4 @@
-namespace DiziFilmUygulaması.Models
+namespace DiziFilmUygulamas.Models
 {
     public class ErrorViewModel
     {

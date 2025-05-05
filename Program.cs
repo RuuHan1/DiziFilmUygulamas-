@@ -1,6 +1,7 @@
+using DiziFilmUygulamas_.Services;
 using Microsoft.EntityFrameworkCore;
 
-namespace DiziFilmUygulaması
+namespace DiziFilmUygulamas
 {
     public class Program
     {
@@ -12,6 +13,8 @@ namespace DiziFilmUygulaması
             options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddHttpClient<MovieService>();
+
 
             var app = builder.Build();
 
@@ -35,7 +38,7 @@ namespace DiziFilmUygulaması
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Movie}/{action=Index}/{id?}");
 
             app.Run();
         }
